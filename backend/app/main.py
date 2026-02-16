@@ -25,7 +25,13 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://todo-app-lgj6.onrender.com", "https://todo-app-4116.vercel.app"],  # Frontend URL
+    allow_origins=[
+        "http://localhost:5173",
+        "https://todo-app-4116.vercel.app",
+        "https://todo-app-tau-indol-32.vercel.app",
+    ],
+    # Allow Vercel preview/production domains without editing code each deploy.
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
