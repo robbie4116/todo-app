@@ -1,9 +1,11 @@
+# backend/app/core/config.py
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
     # MongoDB
     MONGODB_URI: str
+    MONGODB_DB_NAME: str = "todoapp"  # explicit DB name
 
     # JWT
     SECRET_KEY: str
