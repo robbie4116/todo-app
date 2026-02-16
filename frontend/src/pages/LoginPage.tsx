@@ -179,7 +179,7 @@ const LoginPage: React.FC = () => {
               />
             </div>
 
-            <div className="remember-forgot">
+            <div className="remember-row">
               <label className="remember-me">
                 <input
                   type="checkbox"
@@ -188,13 +188,6 @@ const LoginPage: React.FC = () => {
                 />
                 <span>Remember me</span>
               </label>
-              <button
-                type="button"
-                className="link-btn forgot-password"
-                onClick={() => setSuccess('Add a forgot-password flow when backend endpoint is ready.')}
-              >
-                Forgot password?
-              </button>
             </div>
 
             <button type="submit" className={`login-btn ${isSubmitting ? 'loading' : ''}`} disabled={isSubmitting}>
