@@ -267,7 +267,6 @@ const TodosPage: React.FC = () => {
       const updated = await patchTodo(archiveCandidate.id, { status: 'finished' });
       if (detailTodo && detailTodo.id === updated.id) setDetailTodo(null);
       setArchiveCandidate(null);
-      setViewMode('archived');
     } catch (error) {
       console.error('Failed to archive todo', error);
     }
