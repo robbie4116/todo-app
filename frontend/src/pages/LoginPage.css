@@ -327,33 +327,35 @@
 
   .password-input-wrap {
     position: relative;
+    width: 100%;
   }
 
   .password-input-wrap input {
-    padding-right: 44px;
+    width: 100%;
+    padding-left: 44px;
+    padding-right: 14px;
   }
 
   .password-toggle-btn {
     position: absolute;
-    right: 10px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid #3a3a3a;
-    background: #1a1a1a;
-    color: #aaa;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 18px;
+    height: 18px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: #fbbf24;
     cursor: pointer;
-    transition: all 0.2s;
+    z-index: 2;
   }
 
   .password-toggle-btn:hover {
-    border-color: #fbbf24;
-    color: #fbbf24;
+    color: #ffd166;
   }
 
 }
