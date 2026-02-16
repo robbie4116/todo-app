@@ -324,4 +324,36 @@
     align-items: flex-start;
     gap: 12px;
   }
+
+  .password-input-wrap {
+    position: relative;
+  }
+
+  .password-input-wrap input {
+    padding-right: 44px;
+  }
+
+  .password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #3a3a3a;
+    background: #1a1a1a;
+    color: #aaa;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .password-toggle-btn:hover {
+    border-color: #fbbf24;
+    color: #fbbf24;
+  }
+
 }
