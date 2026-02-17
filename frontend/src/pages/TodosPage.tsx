@@ -191,6 +191,7 @@ const TodosPage: React.FC = () => {
   const [detailTodo, setDetailTodo] = useState<Todo | null>(null);
   const [archiveCandidate, setArchiveCandidate] = useState<Todo | null>(null);
   const [deleteCandidate, setDeleteCandidate] = useState<Todo | null>(null);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
   const fetchTodos = async () => {
     setIsLoading(true);
@@ -363,6 +364,10 @@ const TodosPage: React.FC = () => {
   };
 
   const handleLogout = () => {
+    setShowLogoutConfirm(true);
+  };
+
+  const confirmLogout = () => {
     logout();
     navigate('/');
   };
@@ -661,6 +666,17 @@ const TodosPage: React.FC = () => {
           <div className="confirmation-buttons">
             <button className="confirm-delete" type="button" onClick={confirmDelete}>Yes, Delete</button>
             <button className="confirm-no" type="button" onClick={() => setDeleteCandidate(null)}>Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div className={`confirmation-modal ${showLogoutConfirm ? 'open' : ''}`} onClick={() => setShowLogoutConfirm(false)}>
+        <div className="confirmation-content" onClick={(event) => event.stopPropagation()}>
+          <h3>Logout?</h3>
+          <p>You will need to sign in again to continue.</p>
+          <div className="confirmation-buttons">
+            <button className="confirm-logout" type="button" onClick={confirmLogout}>Yes, Logout</button>
+            <button className="confirm-no" type="button" onClick={() => setShowLogoutConfirm(false)}>Cancel</button>
           </div>
         </div>
       </div>
